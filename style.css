@@ -1,0 +1,595 @@
+:root {
+  --bg-color: #141414;
+  --text-main: #efefef;
+  --text-dimmed: #4a505b;
+  --mint-color: #00ffff;
+  --purple-color: #8338ec;
+  --black-color: #080808;
+  --green: #06ffa5;
+  --pink: #ff00ff;
+  --yellow: #c6ff33;
+  --techno: #c4f7ca;
+  --hd: #d8ffc5;
+  --hr: #92eeff;
+  --ec: #30afff;
+  --bu: #5489b1;
+  --tp: #626ac4;
+  --orange: #ffb86b;
+  --font-syne: "Syne", sans-serif;
+  --font-plus: "Plus Jakarta Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-plus);
+  overflow-x: hidden;
+}
+
+/* GNB */
+.gnb {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(8, 8, 8, 1);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 16px 40px;
+}
+
+.gnb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+}
+
+.logo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.hover-logo {
+  opacity: 0;
+}
+
+.logo-link:hover .default-logo {
+  opacity: 0;
+}
+
+.logo-link:hover .hover-logo {
+  opacity: 1;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #525252;
+  padding: 8px 16px;
+  border-radius: 30px;
+  width: 340px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  margin-left: 8px;
+  width: 100%;
+  font-family: var(--font-syne);
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-item {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-family: var(--font-syne);
+  font-weight: 700;
+}
+
+.nav-item:hover {
+  color: var(--mint-color);
+}
+
+/* 메인 배너 (Hero Section) */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 100px auto 100px;
+  padding: 0 20px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+/* 네온사인 반짝임 효과 (600ms Ease-Out Dissolve) */
+.neon-title {
+  font-family: var(--font-plus);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #fff;
+  animation: neonFlicker 1.2s infinite ease-out alternate;
+}
+
+@keyframes neonFlicker {
+  0% {
+    text-shadow: 0 0 4px var(--mint-color), 0 0 10px var(--mint-color);
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 2px var(--mint-color), 0 0 5px var(--mint-color);
+    opacity: 0.85;
+  }
+  100% {
+    text-shadow: 0 0 15px var(--mint-color), 0 0 25px var(--mint-color);
+    opacity: 1;
+  }
+}
+
+/* Get The App 버튼 호버 네온/그라데이션 효과 */
+.btn-get-app {
+  margin-top: 32px;
+  padding: 20px 10px;
+  background: var(--mint-color);
+  color: var(--black-color);
+  border: none;
+  border-radius: 30px;
+  font-family: var(--font-syne);
+  font-weight: 750;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-get-app:hover {
+  background: radial-gradient(circle, #85eff2 0%, var(--mint-color) 100%);
+  box-shadow: 0 0 20px var(--mint-color), 0 0 35px var(--mint-color);
+  transform: translateY(-2px);
+}
+
+.hero-video-box {
+  width: 615px;
+  height: 800px;
+  background-color: #1e1e1e;
+  overflow: hidden;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Z-Pattern Section */
+.z-pattern-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
+}
+
+.z-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.z-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.z-image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#map-feature {
+  margin-top: 140px;
+}
+
+#profile-feature {
+  margin-bottom: 140px;
+}
+
+.feature-display-img {
+  width: 480px;
+  height: 600px;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.z-text-box {
+  flex: 1;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.section-title h2 {
+  font-family: var(--font-plus);
+  font-size: 36px;
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-family: var(--font-plus);
+  font-size: 16px;
+}
+
+/* 1. 기본 상태: 텍스트와 아이콘 모두 어둡게 */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  color: var(--text-dimmed);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+  line-height: 1.5;
+}
+
+/* 기본 상태일 때 아이콘 어둡게 처리 */
+.item-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: brightness(0.4) grayscale(50%);
+  transition: filter 0.3s ease;
+}
+
+.feature-item span {
+  flex: 1;
+}
+
+/* 2. Active 또는 Hover 상태: 텍스트 이동 + 아이콘 원래 색상으로 쨍하게 복원 */
+.feature-item.active,
+.feature-item:hover {
+  color: var(--text-main);
+  transform: translateX(6px);
+}
+
+/* 호버되거나 active일 때 해당 항목 안의 아이콘만 필터 해제 (원래 색상 복원) */
+.feature-item.active .item-icon,
+.feature-item:hover .item-icon {
+  filter: none;
+}
+
+/* Become a Partner 버튼 */
+.btn-partner {
+  margin-top: 32px;
+  padding: 15px 10px;
+  background: var(--mint-color);
+  color: var(--black-color);
+  border: none;
+  border-radius: 30px;
+  font-family: var(--font-syne);
+  font-weight: 750;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-partner:hover {
+  background-color: var(--purple-color);
+}
+
+/* Footer */
+.footer {
+  background-color: #050607;
+  padding: 75px 40px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sns-links {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.ig {
+  width: 24px;
+  height: 24px;
+}
+
+.youtube {
+  width: 25px;
+  height: 17px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 75px auto 20px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  color: var(--text-dimmed);
+  font-size: 13px;
+  font-family: var(--font-plus);
+}
+
+/* QR 코드 모달 스타일 */
+.qr-modal {
+  display: none; /* 평소에는 숨김 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-modal-content {
+  background-color: var(--mint-color);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 380px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 20px var(--mint-color);
+}
+
+.qr-modal-content h3 {
+  font-family: var(--font-syne);
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--black-color);
+}
+
+.qr-modal-content p {
+  font-family: var(--font-plus);
+  font-size: 14px;
+  color: var(--black-color);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.qr-img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  background-color: var(--text-main);
+  padding: 10px;
+}
+
+.qr-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 28px;
+  color: var(--black-color);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.qr-close-btn:hover {
+  opacity: 0.5;
+}
+
+/* ==========================================
+   반응형 미디어 쿼리 (Responsive Breakpoints)
+   ========================================== */
+
+/* 1. 태블릿 PC (834px ~ 1279px) */
+@media screen and (max-width: 1279px) {
+  /* GNB 여백 조정 */
+  .gnb {
+    padding: 16px 24px;
+  }
+
+  .search-bar {
+    width: 260px;
+  }
+
+  /* Hero Section 레이아웃 수축 */
+  .hero-section {
+    margin: 120px auto 80px;
+    gap: 40px;
+  }
+
+  .neon-title {
+    font-size: 52px;
+  }
+
+  .hero-video-box {
+    width: 450px;
+    height: 600px;
+  }
+
+  /* Z-Pattern 간격 조절 */
+  .z-pattern-container {
+    gap: 180px;
+    padding-bottom: 80px;
+  }
+
+  .z-row {
+    gap: 40px;
+  }
+
+  #map-feature {
+    margin-top: 80px;
+  }
+
+  #profile-feature {
+    margin-bottom: 80px;
+  }
+}
+
+/* 2. 아이폰 / 모바일 (390px ~ 833px) 구간 */
+@media screen and (max-width: 833px) {
+  /* GNB 전체 영역을 세로(column) 정렬로 변경 */
+  .gnb {
+    padding: 12px 16px;
+  }
+
+  .gnb-container {
+    flex-wrap: wrap; /* 요소들이 공간이 부족하면 아래로 떨어지도록 허용 */
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  /* 1) 로고: 왼쪽 상단 고정 */
+  .logo-link {
+    width: 80px;
+    height: 26px;
+  }
+
+  /* 2) 검색창: 줄바꿈 없이 위쪽(로고 옆)에 그대로 유지 */
+  .search-bar {
+    display: flex; /* 화면에서 숨기지 않고 그대로 노출 */
+    width: calc(100% - 100px); /* 로고 공간을 제외한 나머지 상단 폭을 차지 */
+    max-width: 240px;
+    padding: 6px 12px;
+  }
+
+  .search-bar input {
+    font-size: 13px;
+  }
+
+  /* 3) Events & My Account 메뉴: 아래쪽 줄로 완전히 떨어지도록 폭 100% 부여 */
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 아래 줄에서 가운데 정렬 (원하시면 flex-start로 왼쪽 정렬 가능) */
+    gap: 24px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08); /* 상단 경계선을 살짝 주어 분리감 부여 */
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+
+  /* --- (이하 기존 모바일 스타일들 유지) --- */
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    margin: 120px auto 60px; /* GNB가 두 줄이 되었으므로 상단 여백 살짝 조절 */
+    gap: 40px;
+  }
+
+  .neon-title {
+    font-size: 44px;
+  }
+
+  .btn-get-app {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-video-box {
+    width: 100%;
+    height: 480px;
+    border-radius: 16px;
+  }
+
+  .z-pattern-container {
+    gap: 100px;
+    padding: 0 20px 80px;
+  }
+
+  .z-row, 
+  .z-row.reverse {
+    flex-direction: column;
+    gap: 32px;
+    text-align: left;
+  }
+
+  #map-feature {
+    margin-top: 40px;
+  }
+
+  #profile-feature {
+    margin-bottom: 40px;
+  }
+
+  .feature-display-img {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .section-title h2 {
+    font-size: 28px;
+  }
+
+  .btn-partner {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 50px 20px 24px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
+}

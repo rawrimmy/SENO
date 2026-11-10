@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENO - ECHOES OF THE UNDERGROUND: VOL. 04</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="events.css">
+  <link rel="stylesheet" href="event-detail.css">
+</head>
+<body>
+
+  <!-- GNB (Fixed) -->
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="SENO Logo" class="logo-img default-logo">
+        <img src="img/logohover.png" alt="SENO Logo Hover" class="logo-img hover-logo">
+      </a>
+      
+      <div class="search-bar">
+        <span class="search-icon">
+          <img src="img/search.png" alt="search-icon">
+        </span>
+        <input type="text" placeholder="Search by events or venue">
+      </div>
+
+      <nav class="nav-links">
+        <a href="events.html" class="nav-item active-page">Events</a>
+        <a href="account.html" class="nav-item">My Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Detail Content Wrapper -->
+  <main class="detail-container">
+    
+    <!-- 왼쪽: 스티키 고정 포스터 영역 -->
+    <div class="sticky-poster-wrapper">
+      <div class="sticky-poster-box">
+        <img src="img/poster.jpg" alt="Event Poster" class="detail-poster-img">
+      </div>
+    </div>
+
+    <!-- 오른쪽: 상세 정보 스크롤 영역 -->
+    <div class="detail-info-wrapper">
+      
+      <!-- 헤더 섹션 (제목, 태그, 버튼 그룹) -->
+      <section class="detail-header">
+        <h1 class="detail-title">ECHOES OF THE UNDERGROUND: VOL. 04</h1>
+        
+        <div class="detail-tags">
+          <span class="genre-tag tag-techno">#Techno</span>
+          <span class="genre-tag tag-house">#House / Disco</span>
+        </div>
+
+        <div class="action-bar">
+          <button class="like-btn" aria-label="Save Event">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart" class="heart-img">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+
+          <button class="share-btn" aria-label="Share Event" id="shareBtn">
+            <div class="custom-share-icon">
+              <!-- 👇 공유 아이콘 <img> 넣는 곳 -->
+              <img src="img/share.png" alt="share">
+            </div>
+          </button>
+        </div>
+
+        <div class="event-meta">
+          <p class="event-datetime">Fri, 25 Sep, 10:00 pm - CLOSE</p>
+          
+          <div class="venue-line">
+            <div class="venue-name-group">
+              <span class="location-icon">
+                <img src="img/location.png" alt="location">
+              </span>
+              <a href="venue-detail1.html" class="venue-link">
+                <span class="venue-name">Neon Syndicate</span>
+              </a>
+            </div>
+            <button class="follow-btn" id="followBtn">follow</button>
+          </div>
+
+          <p class="venue-address">B1, 123 Itaewon-ro, Yongsan-gu, Seoul (3-min walk from Itaewon Stn. Exit 1)</p>
+          <a href="https://maps.google.com" target="_blank" class="open-maps-link">Open in Maps</a>
+        </div>
+
+        <!-- Buy Tickets 버튼 (네온 핑크 그라데이션 및 네온 효과) -->
+        <button class="btn-buy-tickets">Buy Tickets</button>
+      </section>
+
+      <hr class="detail-divider">
+
+      <!-- LINE UP 섹션 -->
+      <section class="detail-section">
+        <h2 class="section-label">LINE UP</h2>
+        <ul class="lineup-list">
+          <li>
+            <span>22:00 - 23:30 | MINWOO</span>
+            <button class="btn-preview" data-audio="audio/sample1.mp3">[► Preview]</button>
+          </li>
+          <li>
+            <span>23:30 - 01:00 | KAI</span>
+            <button class="btn-preview" data-audio="audio/sample2.mp3">[► Preview]</button>
+          </li>
+          <li>
+            <span>01:00 - 02:30 | HELENA (HEADLINER)</span>
+            <button class="btn-preview" data-audio="audio/sample3.mp3">[► Preview]</button>
+          </li>
+          <li>
+            <span>02:30 - 04:00 | BASSBOT</span>
+            <button class="btn-preview" data-audio="audio/sample4.mp3">[► Preview]</button>
+          </li>
+          <li>
+            <span>04:00 - CLOSE | SPECIAL GUEST B2B</span>
+            <button class="btn-preview" data-audio="audio/sample5.mp3">[► Preview]</button>
+          </li>
+        </ul>
+      </section>
+
+      <hr class="detail-divider">
+
+      <!-- EVENT DESCRIPTION 섹션 -->
+      <section class="detail-section">
+        <h2 class="section-label">EVENT DESCRIPTION</h2>
+        <div class="description-content">
+          <h3>[ECHOES OF THE UNDERGROUND: VOL. 04]</h3>
+          <p>Get ready for an unmistakable night of high-energy electronic music in the heart of Itaewon. Volume 04 brings together Seoul’s finest underground selectors alongside international guest headliner HELENA, delivering a relentless journey through Driving Peak-Time Techno and Hard Acid sounds.</p>
+          <p>Expect immersive visual installations, a custom Void Acoustics sound system, and an electric atmosphere that will keep you dancing until dawn.</p>
+
+          <ul class="desc-bullet-list">
+            <li>Genre: Techno / Hard Acid / Peak-Time</li>
+            <li>Door Open: 10:00 PM</li>
+            <li>Notice: Free coat check available inside. No photography allowed on the main dancefloor to preserve the vibe.</li>
+          </ul>
+
+          <div class="desc-policy">
+            <p><strong>Age Limit:</strong> Must be born before 2005 (21+ Physical ID / Passport Required)</p>
+            <p><strong>Dress Code:</strong> Smart Casual / Underground Rave Wear</p>
+            <p><strong>Strictly Prohibited:</strong> No Flip-flops, No Sandals, No Sweatpants, No Tracksuits</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- 인페이지 오디오 플레이어 바 (미리듣기 클릭 시 바닥에 등장) -->
+  <div class="inpage-audio-player" id="audioPlayerBar">
+    <div class="player-info">
+      <span class="playing-title">Playing Track Preview...</span>
+    </div>
+    <audio id="globalAudioPlayer" controls></audio>
+    <button class="close-player-btn" id="closePlayerBtn">✕</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="SENO Logo">
+      </div>
+      <div class="footer-right">
+        <div class="sns-links">
+          <a href="#"><img src="img/ig.png" alt="Instagram" class="ig"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" class="youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© SENO 2026. All rights reserved.</p>
+      <p>37.5665’ N, SEOUL</p>
+    </div>
+  </footer>
+
+  <script src="event-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+/* GNB 아래 Sticky 필터 바 설정 */
+.sticky-filter-wrapper {
+  position: sticky;
+  top: 72px; /* 데스크탑 기준 GNB 높이 고려 */
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 900;
+  padding: 16px 40px;
+}
+
+.filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 1. Date Tag Button */
+.date-filter-box {
+  position: relative;
+  display: inline-block;
+}
+
+.date-tag-btn {
+  background: #262626;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-syne);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.date-tag-btn:hover {
+  border-color: var(--text-main);
+}
+
+.calendar-popup {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #1f1f1f;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.calendar-popup.show {
+  display: block;
+}
+
+.calendar-popup input[type="date"] {
+  background: var(--bg-color);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: var(--font-syne);
+  color-scheme: dark;
+}
+
+/* 2. Type Buttons */
+.type-filter-group {
+  display: flex;
+  gap: 10px;
+}
+
+.type-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--font-syne);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.type-btn.party.active {
+  background-color: var(--yellow);
+  color: var(--black-color);
+}
+
+.type-btn.festival.active {
+  background-color: var(--orange);
+  color: var(--black-color);
+}
+
+.type-btn:hover {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.type-btn:not(.active) {
+  background-color: var(--text-main) !important;
+  color: var(--black-color) !important;
+  box-shadow: none;
+}
+
+/* 3. Genre Buttons (기본 숨김 클래스) */
+.genre-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 100px;
+  transition: all 0.3s ease;
+}
+
+.genre-filter-group.hide {
+  display: none;
+}
+
+.genre-btn {
+  padding: 6px 14px;
+  border-radius: 16px;
+  border: none;
+  font-family: var(--font-syne);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.genre-btn[data-genre="techno"].active { background: var(--techno); color: var(--black-color); }
+.genre-btn[data-genre="house"].active { background: var(--hd); color: var(--black-color); }
+.genre-btn[data-genre="hiphop"].active { background: var(--hr); color: var(--black-color); }
+.genre-btn[data-genre="edm"].active { background: var(--ec); color: var(--black-color); }
+.genre-btn[data-genre="bass"].active { background: var(--bu); color: var(--black-color); }
+.genre-btn[data-genre="trance"].active { background: var(--tp); color: var(--black-color); }
+
+.genre-btn:not(.active) {
+  background: #333333;
+  color: #888888;
+}
+
+.genre-btn:hover {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Main Events Layout */
+.events-main-container {
+  max-width: 1200px;
+  margin: 100px auto 100px;
+  padding: 0 40px;
+}
+
+.date-group {
+  margin-bottom: 50px;
+}
+
+.group-date-header {
+  font-family: var(--font-plus);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-main);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 24px;
+}
+
+.event-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.event-card {
+  display: flex;
+  align-items: center;
+  background: #171717;
+  border-radius: 10px;
+  padding: 16px 24px;
+  gap: 24px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.event-card:hover {
+  border-color: var(--mint-color);
+}
+
+.card-thumb {
+  width: 120px;
+  height: 90px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: #262626;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-title {
+  font-family: var(--font-plus);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.card-tags {
+  display: flex;
+  gap: 6px;
+}
+
+.genre-tag {
+  font-family: var(--font-syne);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  color: #000;
+}
+
+.tag-techno { background: var(--techno); }
+.tag-house { background: var(--hd); }
+.tag-hiphop { background: var(--hr); }
+.tag-edm { background: var(--ec); }
+.tag-bass { background: var(--bu); }
+.tag-trance { background: var(--tp); }
+
+.card-venue {
+  font-family: var(--font-plus);
+  font-size: 14px;
+  font-weight: 100;
+  color: var(--text-main);
+}
+
+/* 이벤트 카드 내 베뉴 이름 호버 효과 */
+.card-venue {
+  font-family: var(--font-plus);
+  font-size: 14px;
+  font-weight: 100;
+  color: var(--text-main);
+  cursor: pointer; 
+  transition: color 0.2s ease; 
+}
+
+.card-venue:hover {
+  color: var(--mint-color); 
+}
+
+.venue-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Like Heart Button */
+.like-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #666;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.custom-heart-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-heart-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.like-count {
+  font-family: var(--font-plus);
+  font-size: 11px;
+}
+
+.like-btn.liked .custom-heart-icon img {
+  /* 채도와 색상을 조절하여 핑크빛(#ff00ff)으로 변환하는 필터 */
+  filter: brightness(0) saturate(100%) invert(26%) sepia(93%) saturate(7483%) hue-rotate(301deg) brightness(101%) contrast(101%);
+}
+
+/* ==========================================
+   반응형 미디어 쿼리 (Responsive Breakpoints)
+   ========================================== */
+@media screen and (max-width: 1279px) {
+  .gnb {
+    padding: 16px 24px;
+  }
+  .search-bar {
+    width: 260px;
+  }
+}
+
+/* 모바일 화면 (833px 이하) - GNB가 두 줄이 될 때 필터 바가 가려지지 않도록 top 높이 재조정 */
+@media screen and (max-width: 833px) {
+  .sticky-filter-wrapper {
+    top: 94px; /* GNB가 두 줄로 늘어난 높이에 맞춰 아래로 밀어줌 */
+  }
+
+  .gnb {
+    padding: 12px 16px;
+  }
+
+  .gnb-container {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .logo-link {
+    width: 80px;
+    height: 26px;
+  }
+
+  .search-bar {
+    display: flex;
+    width: calc(100% - 100px);
+    max-width: 240px;
+    padding: 6px 12px;
+  }
+
+  .search-bar input {
+    font-size: 13px;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-item {
+    font-size: 14px;
+  }
+}

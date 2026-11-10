@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENO - Neon Syndicate Venue</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="events.css">
+  <link rel="stylesheet" href="venue-detail.css">
+</head>
+<body>
+
+  <!-- GNB (Fixed) -->
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="SENO Logo" class="logo-img default-logo">
+        <img src="img/logohover.png" alt="SENO Logo Hover" class="logo-img hover-logo">
+      </a>
+      
+      <div class="search-bar">
+        <span class="search-icon">
+          <img src="img/search.png" alt="search-icon">
+        </span>
+        <input type="text" placeholder="Search by event or venue">
+      </div>
+
+      <nav class="nav-links">
+        <a href="events.html" class="nav-item">Events</a>
+        <a href="account.html" class="nav-item">My account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Venue Header Section (상단 베뉴 프로필 영역) -->
+  <main class="venue-main-container">
+    <section class="venue-header-section">
+      <div class="venue-info-left">
+        
+        <!-- 베뉴 이름 & 팔로우 버튼 -->
+        <div class="venue-title-row">
+          <h1 class="venue-title">Neon Syndicate</h1>
+          <button class="follow-btn" id="followBtn">follow</button>
+        </div>
+
+        <!-- Followers 수 (팔로우 시 +1 토글) -->
+        <div class="followers-box">
+          <span class="followers-label">Followers</span>
+          <span class="followers-count" id="followersCount" data-count="1234">1,234</span>
+        </div>
+
+        <!-- 주소 및 Open in Maps (event-detail과 동일) -->
+        <div class="venue-location-box">
+          <p class="venue-address">B1, 123 Itaewon-ro, Yongsan-gu, Seoul (3-min walk from Itaewon Stn. Exit 1)</p>
+          <a href="https://maps.google.com" target="_blank" class="open-maps-link">Open in Maps</a>
+        </div>
+
+      </div>
+
+      <!-- 우측 베뉴 로고/그래픽 영역 -->
+      <div class="venue-logo-right">
+        <img src="img/venue1.png" alt="Neon Syndicate Logo" class="venue-graphic-img">
+      </div>
+    </section>
+
+    <!-- 구분선 -->
+    <hr class="venue-divider">
+
+    <!-- 베뉴 주관 이벤트 카드 목록 (events.html의 카드와 완전 동일) -->
+    <section class="venue-events-section">
+      <div class="date-group">
+        <h2 class="group-date-header">Fri, 25 Sep</h2>
+        
+        <div class="event-card-list">
+          <article class="event-card" data-detail="event-detail1.html" data-type="party" data-genres="techno,house">
+            <div class="card-thumb">
+              <img src="img/poster.jpg" alt="Event Thumbnail">
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">ECHOES OF THE UNDERGROUND: VOL. 04</h3>
+              <div class="card-tags">
+                <span class="genre-tag tag-techno">#Techno</span>
+                <span class="genre-tag tag-house">#House / Disco</span>
+              </div>
+              <p class="card-venue">Neon Syndicate</p>
+            </div>
+            <button class="like-btn" aria-label="Save Event">
+              <div class="custom-heart-icon">
+                <img src="img/heart.png" alt="heart">
+              </div>
+              <span class="like-count" data-count="1234">1,234</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="SENO Logo">
+      </div>
+      <div class="footer-right">
+        <div class="sns-links">
+          <a href="#"><img src="img/ig.png" alt="Instagram" class="ig"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" class="youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SENO All rights reserved.</p>
+      <p>37.5665’ N, SEOUL</p>
+    </div>
+  </footer>
+
+  <script src="venue-detail.js"></script>
+</body>
+</html>

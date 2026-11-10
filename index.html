@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENO - Seoul's Nightout Guide</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- GNB (Fixed) -->
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="#hero" class="logo-link">
+        <img src="img/logo.png" alt="SENO Logo" class="logo-img default-logo">
+        <img src="img/logohover.png" alt="SENO Logo Hover" class="logo-img hover-logo">
+      </a>
+      
+      <div class="search-bar">
+        <span class="search-icon">
+          <img src="img/search.png" alt="search-icon">
+        </span>
+        <input type="text" placeholder="Search by events or venue">
+      </div>
+
+      <nav class="nav-links">
+        <a href="events.html" class="nav-item">Events</a>
+        <a href="account.html" class="nav-item">My Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 메인 배너 (Hero Section) -->
+  <section class="hero-section" id="hero">
+    <div class="hero-content">
+      <h1 class="neon-title">Seoul’s<br>Nightout<br>Guide</h1>
+      <button class="btn-get-app">Get the App</button>
+    </div>
+    <div class="hero-video-box">
+      <video autoplay loop muted playsinline class="hero-video">
+        <source src="vid/video1.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- QR 코드 모달 팝업 구조 -->
+  <div class="qr-modal" id="qrModal">
+    <div class="qr-modal-content">
+      <span class="qr-close-btn">&times;</span>
+      <h3>Scan to Download SENO</h3>
+      <p>Scan the QR code with your mobile camera to get the app.</p>
+      <img src="img/qr.png" alt="SENO App QR Code" class="qr-img">
+    </div>
+  </div>
+
+<!-- Z-Pattern Feature Sections -->
+  <section class="z-pattern-container">
+
+    <!-- 1. Map Feature -->
+    <div class="z-row" id="map-feature">
+      <div class="z-image-box">
+        <img src="img/map1.png" alt="Map Feature Display" class="feature-display-img">
+      </div>
+      <div class="z-text-box">
+        <div class="section-title">
+          <img src="img/mapf.png" alt="Map Icon" class="feature-icon">
+          <h2>Map Feature</h2>
+        </div>
+        <ul class="feature-list">
+          <li class="feature-item active" data-img-type="slide" data-slide-imgs="img/map1.png, img/map1-1.png">
+            <img src="img/mapf1.png" alt="Item Icon" class="item-icon">
+            <span>Discover nearby nightlife spots with real-time location filter.</span>
+          </li>
+          <li class="feature-item" data-img="img/map2.png">
+            <img src="img/mapf2.png" alt="Item Icon" class="item-icon">
+            <span>Easily filter and save your favorite pubs, bars, and clubs.</span>
+          </li>
+          <li class="feature-item" data-img="img/map3.png">
+            <img src="img/mapf2.png" alt="Item Icon" class="item-icon">
+            <span>Follow venue profiles for live updates and daily event alerts.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2. Events & Lineups -->
+    <div class="z-row reverse" id="events-feature">
+      <div class="z-image-box">
+        <img src="img/events1.png" alt="Events Feature Display" class="feature-display-img">
+      </div>
+      <div class="z-text-box">
+        <div class="section-title">
+          <img src="img/eventsf.png" alt="Events Icon" class="feature-icon">
+          <h2>Events & Lineups</h2>
+        </div>
+        <ul class="feature-list">
+          <li class="feature-item active" data-img="img/events1.png">
+            <img src="img/evnetsf1.png" alt="Item Icon" class="item-icon">
+            <span>Browse weekly curated party and DJ set schedules at a glance.</span>
+          </li>
+          <li class="feature-item" data-img="img/events2.png">
+            <img src="img/eventsf2.png" alt="Item Icon" class="item-icon">
+            <span>Filter events by genre to match your personal music taste.</span>
+          </li>
+          <li class="feature-item" data-img="img/events3.png">
+            <img src="img/eventsf3.png" alt="Item Icon" class="item-icon">
+            <span>Check dress codes, lineup details, and book tickets instantly.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. My Tickets & Profile -->
+    <div class="z-row" id="profile-feature">
+      <div class="z-image-box">
+        <img src="img/ticket1.png" alt="Profile Feature Display" class="feature-display-img">
+      </div>
+      <div class="z-text-box">
+        <div class="section-title">
+          <img src="img/ticketf.png" alt="Profile Icon" class="feature-icon">
+          <h2>My Tickets & Profile</h2>
+        </div>
+        <ul class="feature-list">
+          <li class="feature-item active" data-img="img/ticket1.png">
+            <img src="img/ticketf1.png" alt="Item Icon" class="item-icon">
+            <span>Access upcoming mobile tickets and QR codes for quick door entry.</span>
+          </li>
+          <li class="feature-item" data-img="img/ticket2.png">
+            <img src="img/ticketf2.png" alt="Item Icon" class="item-icon">
+            <span>Track past event histories.</span>
+          </li>
+          <li class="feature-item" data-img="img/profile1.png">
+            <img src="img/ticketf3.png" alt="Item Icon" class="item-icon">
+            <span>Check following venue updates, or access the Host Center to become a partner.</span>
+          </li>
+        </ul>
+        <button class="btn-partner">Become a partner</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="SENO Logo">
+      </div>
+      <div class="footer-right">
+        <div class="sns-links">
+          <a href="#"><img src="img/ig.png" alt="Instagram" class="ig"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" class="youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© SENO 2026. All rights reserved.</p>
+      <p>37.5665’ N, SEOUL</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

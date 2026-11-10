@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENO - Events</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="events.css">
+</head>
+<body>
+
+  <!-- GNB (Fixed) -->
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="SENO Logo" class="logo-img default-logo">
+        <img src="img/logohover.png" alt="SENO Logo Hover" class="logo-img hover-logo">
+      </a>
+      
+      <div class="search-bar">
+        <span class="search-icon">
+          <img src="img/search.png" alt="search-icon">
+        </span>
+        <input type="text" placeholder="Search by events or venue">
+      </div>
+
+      <nav class="nav-links">
+        <a href="events.html" class="nav-item active-page">Events</a>
+        <a href="account.html" class="nav-item">My Account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sticky Filter Bar -->
+  <div class="sticky-filter-wrapper">
+    <div class="filter-container">
+      
+      <!-- 1. 날짜 선택 드롭다운 -->
+      <div class="date-filter-box">
+        <button class="date-tag-btn" id="dateTagBtn">
+          <span id="selectedDateText">Today</span>
+          <svg class="arrow-icon" width="10" height="6" viewBox="0 0 10 6" fill="none">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- 커스텀 달력 팝업 -->
+        <div class="calendar-popup" id="calendarPopup">
+          <input type="date" id="datePicker">
+        </div>
+      </div>
+
+      <!-- 2. 타입 필터 (Party & DJ Set / Festival) -->
+      <div class="type-filter-group">
+        <button class="type-btn party active" data-type="party">Party & DJ Set</button>
+        <button class="type-btn festival active" data-type="festival">Festival</button>
+      </div>
+
+      <!-- 3. 장르 태그 필터 (기본 디폴트 상태에서는 hide 클래스로 숨김 처리) -->
+      <div class="genre-filter-group hide" id="genreFilterGroup">
+        <button class="genre-btn active" data-genre="techno">#Techno</button>
+        <button class="genre-btn active" data-genre="house">#House / Disco</button>
+        <button class="genre-btn active" data-genre="hiphop">#Hip-Hop / R&B</button>
+        <button class="genre-btn active" data-genre="edm">#EDM / Commercial</button>
+        <button class="genre-btn active" data-genre="bass">#Bass / UK Sound</button>
+        <button class="genre-btn active" data-genre="trance">#Trance / Psytrance</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Events List Container -->
+  <main class="events-main-container">
+    
+    <!-- Group: Fri, 25 Sep -->
+    <section class="date-group">
+      <h2 class="group-date-header">Fri, 25 Sep</h2>
+      
+      <div class="event-card-list">
+        <article class="event-card" data-detail="event-detail1.html" data-type="party" data-genres="techno,house">
+          <div class="card-thumb">
+            <img src="img/poster.jpg" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">ECHOES OF THE UNDERGROUND: VOL. 04</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-techno">#Techno</span>
+              <span class="genre-tag tag-house">#House / Disco</span>
+            </div>
+            <a href="venue-detail1.html" class="venue-link">
+              <p class="card-venue">Neon Syndicate</p>
+            </a>
+          </div>
+          <button class="like-btn" aria-label="Save Event">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+
+        </article>
+
+        <article class="event-card" data-detail="event-detail2.html" data-type="party" data-genres="techno,house">
+          <div class="card-thumb">
+            <img src="img/poster1.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">MIDNIGHT PULSE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-techno">#Techno</span>
+              <span class="genre-tag tag-house">#House / Disco</span>
+            </div>
+            <a href="venue-detail2.html" class="venue-link">
+              <p class="card-venue">Midnight Pulse</p>
+            </a>  
+            </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail3.html" data-type="party" data-genres="house">
+          <div class="card-thumb">
+            <img src="img/poster2.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">VELVET GROOVE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-house">#House / Disco</span>
+            </div>
+            <a href="venue-detail3.html" class="venue-link">
+              <p class="card-venue">The Velvet Room</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail4.html" data-type="party" data-genres="bass,trance">
+          <div class="card-thumb">
+            <img src="img/poster3.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">NEURAL FRACTURE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-bass">#Bass / UK Sound</span>
+              <span class="genre-tag tag-trance">#Trance / Psytrance</span>
+            </div>
+            <a href="venue-detail4.html" class="venue-link">
+              <p class="card-venue">Cyber Distortion</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail5.html" data-type="party" data-genres="edm,trance">
+          <div class="card-thumb">
+            <img src="img/poster4.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">ECHO COLLECTIVE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-edm">#EDM / Commercial</span>
+              <span class="genre-tag tag-trance">#Trance / Psytrance</span>
+            </div>
+            <a href="venue-detail5.html" class="venue-link">
+              <p class="card-venue">Echo Basement</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Group: Sat, 26 Sep -->
+    <section class="date-group">
+      <h2 class="group-date-header">Sat, 26 Sep</h2>
+
+      <div class="event-card-list">
+        <article class="event-card" data-detail="event-detail6.html" data-type="party" data-genres="hiphop">
+          <div class="card-thumb">
+            <img src="img/poster5.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">SOULFUL BROTHERS</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-hiphop">#Hip-Hop / R&B</span>
+            </div>
+            <a href="venue-detail6.html" class="venue-link">
+              <p class="card-venue">Underground Soul</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail7.html" data-type="party" data-genres="techno">
+          <div class="card-thumb">
+            <img src="img/poster6.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">TECH-CORE NIGHT</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-techno">#Techno</span>
+            </div>
+            <a href="venue-detail7.html" class="venue-link">
+              <p class="card-venue">Tech City</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail8.html" data-type="party" data-genres="bass">
+          <div class="card-thumb">
+            <img src="img/poster7.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">RAVE WAVE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-bass">#Bass / UK Sound</span>
+            </div>
+            <a href="venue-detail8.html" class="venue-link">
+              <p class="card-venue">Sonic Sphere</p>
+            </a>
+          </div>
+          <button class="like-btn" aria-label="Save Event">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Group: Sun, 27 Sep -->
+    <section class="date-group">
+      <h2 class="group-date-header">Sun, 27 Sep</h2>
+
+      <div class="event-card-list">
+        <article class="event-card" data-detail="event-detail9.html" data-type="party" data-genres="techno, house">
+          <div class="card-thumb">
+            <img src="img/poster8.png" alt="Event Thumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">CHILL PULSE</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-techno">#Techno</span>
+              <span class="genre-tag tag-house">#House / Disco</span>
+            </div>
+            <a href="venue-detail9.html" class="venue-link">
+              <p class="card-venue">Midnight Pulse</p>
+            </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+
+        <article class="event-card" data-detail="event-detail10.html" data-type="party" data-genres="hiphop">
+          <div class="card-thumb">
+            <img src="img/poster9.png" alt="EventThumbnail">
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">FUNK VELVETEER</h3>
+            <div class="card-tags">
+              <span class="genre-tag tag-hiphop">#Hip-Hop / R&B</span>
+            </div>
+          <a href="venue-detail10.html" class="venue-link">
+            <p class="card-venue">The Velvet Room</p>
+          </a>
+          </div>
+          <button class="like-btn">
+            <div class="custom-heart-icon">
+              <img src="img/heart.png" alt="heart">
+            </div>
+            <span class="like-count" data-count="1234">1,234</span>
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="SENO Logo">
+      </div>
+      <div class="footer-right">
+        <div class="sns-links">
+          <a href="#"><img src="img/ig.png" alt="Instagram" class="ig"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" class="youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© SENO 2026. All rights reserved.</p>
+      <p>37.5665’ N, SEOUL</p>
+    </div>
+  </footer>
+
+  <script src="events.js"></script>
+</body>
+</html>

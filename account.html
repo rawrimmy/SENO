@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENO - My Account</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="events.css">
+  <link rel="stylesheet" href="account.css">
+</head>
+<body>
+
+  <!-- GNB (Fixed) -->
+  <header class="gnb">
+    <div class="gnb-container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.png" alt="SENO Logo" class="logo-img default-logo">
+        <img src="img/logohover.png" alt="SENO Logo Hover" class="logo-img hover-logo">
+      </a>
+      
+      <div class="search-bar">
+        <span class="search-icon">
+          <img src="img/search.png" alt="search-icon">
+        </span>
+        <input type="text" placeholder="Search by event or venue">
+      </div>
+
+      <nav class="nav-links">
+        <a href="events.html" class="nav-item">Events</a>
+        <a href="account.html" class="nav-item active-page">My account</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Account Content Wrapper -->
+  <main class="account-main-container">
+    
+    <!-- 1차 메인 탭 (My tickets / Saved events / Following) -->
+    <div class="main-tabs-group">
+      <button class="main-tab-btn active" data-tab="tickets">My tickets</button>
+      <button class="main-tab-btn" data-tab="saved">Saved events</button>
+      <button class="main-tab-btn" data-tab="following">Following</button>
+    </div>
+
+    <!-- TAB 1: MY TICKETS -->
+    <section class="tab-content-section active" id="tab-tickets">
+      <!-- 2차 서브 탭 (Upcoming / Past) -->
+      <div class="sub-tabs-group">
+        <button class="sub-tab-btn active" data-sub="tickets-upcoming">Upcoming tickets</button>
+        <button class="sub-tab-btn" data-sub="tickets-past">Past tickets</button>
+      </div>
+
+      <!-- 서브 1: Upcoming Tickets List -->
+      <div class="sub-content-panel active" id="sub-tickets-upcoming">
+        <div class="date-group">
+          <h2 class="group-date-header">Fri, 25 Sep</h2>
+          <div class="event-card-list">
+            
+            <!-- Ticket Event Card -->
+            <article class="event-card ticket-card" data-detail="event-detail1.html">
+              <div class="card-thumb">
+                <img src="img/poster.jpg" alt="Event Thumbnail">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">ECHOES OF THE UNDERGROUND: VOL. 04</h3>
+                <div class="card-tags">
+                  <span class="genre-tag tag-techno">#Techno</span>
+                  <span class="genre-tag tag-house">#House / Disco</span>
+                </div>
+                <!-- 베뉴 이름 클릭 시 venue-detail.html로 이동 -->
+                <p class="card-venue venue-name-link" data-venue-url="venue-detail1.html">Neon Syndicate</p>
+              </div>
+              
+              <!-- 티켓 아이콘 버튼 (클릭 시 QR 팝업 모달) -->
+              <button class="ticket-icon-btn" id="openTicketQrBtn" aria-label="Open Ticket QR">
+                <img src="img/ticket.png" alt="Ticket" class="ticket-icon-img">
+              </button>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- 서브 2: Past Tickets List (비어있음) -->
+      <div class="sub-content-panel" id="sub-tickets-past">
+        <div class="empty-state-box">
+          <p>No past tickets available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: SAVED EVENTS -->
+    <section class="tab-content-section" id="tab-saved">
+      <!-- 2차 서브 탭 (Upcoming / Past) -->
+      <div class="sub-tabs-group">
+        <button class="sub-tab-btn active" data-sub="saved-upcoming">Upcoming events</button>
+        <button class="sub-tab-btn" data-sub="saved-past">Past events</button>
+      </div>
+
+      <!-- 서브 1: Upcoming Saved Events -->
+      <div class="sub-content-panel active" id="sub-saved-upcoming">
+        
+        <!-- Fri, 25 Sep -->
+        <div class="date-group">
+          <h2 class="group-date-header">Fri, 25 Sep</h2>
+          <div class="event-card-list">
+            <article class="event-card" data-detail="event-detail1.html">
+              <div class="card-thumb">
+                <img src="img/poster.jpg" alt="Event Thumbnail">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">ECHOES OF THE UNDERGROUND: VOL. 04</h3>
+                <div class="card-tags">
+                  <span class="genre-tag tag-techno">#Techno</span>
+                  <span class="genre-tag tag-house">#House / Disco</span>
+                </div>
+                <p class="card-venue venue-name-link" data-venue-url="venue-detail1.html">Neon Syndicate</p>
+              </div>
+              <button class="like-btn liked" aria-label="Save Event">
+                <div class="custom-heart-icon">
+                  <img src="img/heart.png" alt="heart">
+                </div>
+                <span class="like-count" data-count="1234">1,234</span>
+              </button>
+            </article>
+
+            <article class="event-card" data-detail="event-detail2.html">
+              <div class="card-thumb">
+                <img src="img/poster1.png" alt="Event Thumbnail">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">MIDNIGHT PULSE</h3>
+                <div class="card-tags">
+                  <span class="genre-tag tag-techno">#Techno</span>
+                  <span class="genre-tag tag-house">#House / Disco</span>
+                </div>
+                <p class="card-venue venue-name-link" data-venue-url="venue-detail.html">Midnight Pulse</p>
+              </div>
+              <button class="like-btn liked">
+                <div class="custom-heart-icon">
+                  <img src="img/heart.png" alt="heart">
+                </div>
+                <span class="like-count" data-count="1234">1,234</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- Sat, 26 Sep -->
+        <div class="date-group">
+          <h2 class="group-date-header">Sat, 26 Sep</h2>
+          <div class="event-card-list">
+            <article class="event-card" data-detail="event-detail8.html">
+              <div class="card-thumb">
+                <img src="img/poster7.png" alt="Event Thumbnail">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">RAVE WAVE</h3>
+                <div class="card-tags">
+                  <span class="genre-tag tag-bass">#Bass / UK Sound</span>
+                </div>
+                <p class="card-venue venue-name-link" data-venue-url="venue-detail.html">Sonic Sphere</p>
+              </div>
+              <button class="like-btn liked">
+                <div class="custom-heart-icon">
+                  <img src="img/heart.png" alt="heart">
+                </div>
+                <span class="like-count" data-count="1234">1,234</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 서브 2: Past Saved Events (비어있음) -->
+      <div class="sub-content-panel" id="sub-saved-past">
+        <div class="empty-state-box">
+          <p>No past saved events.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: FOLLOWING VENUES -->
+    <section class="tab-content-section" id="tab-following">
+      <div class="venue-grid">
+        
+        <!-- 1. SOAP -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue1.png" alt="SOAP" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">SOAP</span>
+        </a>
+
+        <!-- 2. Neon Syndicate (연결 가능한 유일한 베뉴) -->
+        <a href="venue-detail1.html" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue1.png" alt="Neon Syndicate" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Neon Syndicate</span>
+        </a>
+
+        <!-- 3. Midnight Pulse -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue2.png" alt="Midnight Pulse" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Midnight Pulse</span>
+        </a>
+
+        <!-- 4. The Velvet Room -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue3.png" alt="The Velvet Room" class="venue-avatar-img">
+          </div>
+          <span class="venue-card-name">The Velvet Room</span>
+        </a>
+
+        <!-- 5. Cyber Distortion -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue4.png" alt="Cyber Distortion" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Cyber Distortion</span>
+        </a>
+
+        <!-- 6. Tech City -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue5.png" alt="Tech City" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Tech City</span>
+        </a>
+
+        <!-- 7. Sonic Sphere -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue6.png" alt="Sonic Sphere" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Sonic Sphere</span>
+        </a>
+
+        <!-- 8. Echo Basement -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue7.png" alt="Echo Basement" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Echo Basement</span>
+        </a>
+
+        <!-- 9. Underground Soul -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue8.png" alt="Underground Soul" class="venue-avatar-img">
+            <span class="update-badge"></span>
+          </div>
+          <span class="venue-card-name">Underground Soul</span>
+        </a>
+
+        <!-- 10. CAVE -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue9.png" alt="CAVE" class="venue-avatar-img">
+          </div>
+          <span class="venue-card-name">CAVE</span>
+        </a>
+
+        <!-- 11. Neon Wave -->
+        <a href="#" class="venue-card">
+          <div class="venue-avatar-box">
+            <img src="img/venue10.png" alt="Neon Wave" class="venue-avatar-img">
+          </div>
+          <span class="venue-card-name">Neon Wave</span>
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 🎟️ TICKET QR POPUP MODAL -->
+  <div class="ticket-modal" id="ticketModal">
+    <div class="ticket-modal-card">
+      <span class="ticket-modal-close" id="ticketModalClose">&times;</span>
+      
+      <!-- QR 이미지 -->
+      <div class="qr-code-box">
+        <img src="img/qr.png" alt="Admission QR Code">
+      </div>
+
+      <!-- 유효 시간 카운트다운 (60초) -->
+      <div class="qr-timer-box">
+        <span class="timer-dot"></span>
+        <span class="timer-text">Valid for <strong id="qrTimer">00:60</strong></span>
+      </div>
+
+      <!-- 티켓 세부 정보 & 홀더 성함 -->
+      <div class="ticket-info-details">
+        <p>TICKET : General Admission (GA) x 1</p>
+        <p>HOLDER : YURIM KIM (#TKT-89201)</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/logo.png" alt="SENO Logo">
+      </div>
+      <div class="footer-right">
+        <div class="sns-links">
+          <a href="#"><img src="img/ig.png" alt="Instagram" class="ig"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" class="youtube"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SENO All rights reserved.</p>
+      <p>37.5665’ N, SEOUL</p>
+    </div>
+  </footer>
+
+  <script src="account.js"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+/* 메인 컨테이너 (좌우 2열 배치) */
+.detail-container {
+  max-width: 1200px;
+  margin: 120px auto 100px;
+  padding: 0 40px;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* 1. 스티키 포스터 영역 (푸터 가리기 직전까지 스크롤 따라 내려감) */
+.sticky-poster-wrapper {
+  flex: 0 0 440px;
+  position: sticky;
+  top: 100px; /* GNB 아래 위치 고정 */
+}
+
+.sticky-poster-box {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.detail-poster-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 2. 오른쪽 정보 영역 */
+.detail-info-wrapper {
+  flex: 1;
+}
+
+.detail-title {
+  font-family: var(--font-plus);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.detail-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* 액션 바 (하트 & 공유) */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.share-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-share-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.custom-share-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 메타 정보 (날짜, 장소, 주소) */
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--font-plus);
+}
+
+.event-datetime {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.venue-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.venue-name-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.location-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+}
+
+.location-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.venue-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* 이벤트 상세페이지 내 베뉴 이름 호버 효과 */
+.venue-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.venue-name:hover {
+  color: var(--mint-color);
+}
+
+.venue-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Follow 버튼 (inner shadow 호버 효과 + 클릭시 보라색 변환) */
+.follow-btn {
+  padding: 4px 14px;
+  border-radius: 14px;
+  background-color: var(--text-main);
+  color: var(--black-color);
+  border: none;
+  outline: none;
+  font-family: var(--font-syne);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.follow-btn:hover {
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.follow-btn.following {
+  background-color: var(--purple-color);
+  color: var(--black-color);
+}
+
+.venue-address {
+  font-size: 13px;
+  color: var(--text-main);
+}
+
+.open-maps-link {
+  font-size: 12px;
+  color: var(--text-dimmed);
+  text-decoration: underline;
+  width: fit-content;
+  transition: color 0.2s ease;
+}
+
+.open-maps-link:hover {
+  color: var(--mint-color);
+}
+
+/* Buy Tickets 버튼 (네온 핑크 + 중앙 그라데이션) */
+.btn-buy-tickets {
+  margin-top: 32px;
+  width: 160px;
+  padding: 20px 0;
+  background: var(--mint-color);
+  color: var(--black-color);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-syne);
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-buy-tickets:hover {
+  background: radial-gradient(circle, #ff99ff 0%, #ff1ac6 100%);
+  box-shadow: 0 0 15px var(--pink), 0 0 30px var(--pink);
+  transform: translateY(-2px);
+}
+
+.detail-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 40px 0;
+}
+
+/* 섹션 타이틀 */
+.section-label {
+  font-family: var(--font-plus);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+/* Lineup 리스트 */
+.lineup-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-family: var(--font-plus);
+  font-size: 14px;
+}
+
+.lineup-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-main);
+}
+
+.btn-preview {
+  background: transparent;
+  border: none;
+  color: var(--text-dimmed);
+  font-family: var(--font-plus);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.btn-preview:hover {
+  color: var(--mint-color);
+}
+
+/* Event Description */
+.description-content {
+  font-family: var(--font-plus);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.description-content h3 {
+  font-size: 15px;
+  color: var(--text-main);
+}
+
+.desc-bullet-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.desc-policy {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-dimmed);
+}
+
+/* 하단 fixed 오디오 플레이어 바 */
+.inpage-audio-player {
+  position: fixed;
+  bottom: -90px; /* 숨김 상태 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.95);
+  border: 1px solid var(--mint-color);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 10px 24px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+  transition: bottom 0.4s ease;
+}
+
+.inpage-audio-player.active {
+  bottom: 24px; /* 노출 */
+}
+
+.playing-title {
+  font-size: 12px;
+  font-family: var(--font-plus);
+  color: var(--mint-color);
+}
+
+.close-player-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 반응형 (태블릿/모바일) */
+@media screen and (max-width: 833px) {
+  .detail-container {
+    flex-direction: column;
+    margin-top: 140px;
+    gap: 40px;
+  }
+  
+  .sticky-poster-wrapper {
+    position: relative;
+    top: 0;
+    width: 100%;
+    flex: none;
+  }
+}
